@@ -9,7 +9,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.set("view engine", "ejs");
 
 const getWeather = async(cityName) =>{
-  const apiOne = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=a0bc5669a86075a0486caf026d49a8c9&units=metric`
+  const apiOne = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${process.env.API}&units=metric`
   try {
       const repo = await axios.get(apiOne)
       return repo.data
